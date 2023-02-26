@@ -1,1 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            REGISTER sample
+        </title>
+        <script language="javascript">
 
+            function validate()
+            {
+                var f=1;
+                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                var expr = /^(0|91)?[6-9][0-9]{9}$/;
+                var pnam=document.forms["regform"]["pname"].value;
+                var gnam=document.forms["regform"]["gname"].value;
+                var pwd=document.forms["regform"]["pswd"].value;
+                var brt=document.forms["regform"]["dob"].value;
+                var mail=document.forms["regform"]["email"].value;
+                var phone=document.forms["regform"]["phno"].value;
+                var id=document.forms["regform"]["pid"].value;
+                var dnam=document.forms["regform"]["dname"].value;
+                var ctr=document.forms["regform"]["ctrl"].value;
+                var gam=document.forms["regform"]["game"].value;
+
+
+                if (pnam == "" && gnam == "" && pwd == "" && brt == "" && mail == "" && phone == ""&& id == "" && dnam == ""&& ctr == "" && gam == "")
+                {
+                    alert("Enter all Details");
+                    return false;
+                }
+                else if(pnam=="")
+                {
+                    alert("enter player name");
+                    return false;
+                }
+                else if(gnam=="")
+                {
+                    alert("enter gaming name");
+                    return false;
+                }
+                else if(pwd=="")
+                {
+                    alert("enter password");
+                    return false;
+                }
+                else if(pwd.length<8)
+                {
+                    alert("password must be atleast 8 characters");
+                    return false;
+                }
+                else if(brt=="")
+                {
+                    alert("enter date of birth");
+                    return false;
+                }
+                else if(mail=="")
+                {
+                    alert("enter mail id");
+                    return false;   
+                }
+                else if(!mailformat.test(mail))
+                {
+                    alert("enter valid gmail");
+                    return false;
+                }
+                else if(phone=="")
+                {
+                    alert("enter phone number");
+                    return false;   
+                }
+                else if(!expr.test(phone)) 
+                {
+                    alert("invalid phone number");
+                    return false
+                }
+                else if(id=="")
+                {
+                    alert("enter player id");
+                    return false;
+                }
+                else if(id.length!=12)
+                {
+                    alert("enter valid player id");
+                    return false;
+                }
+                else if(dnam=="")
+                {
+                    alert("enter device name");
+                    return false;
+                }
+                else if(ctr=="")
+                {
+                    alert("enter control type");
+                    return false;
+                }
+                else if(ctr.length!=15)
+                {
+                    alert("enter valid control id");
+                    return false;  
+                }
+                else if(gam=="")
+                {
+                    alert("enter game name");
+                    return false;
+                }
+            }
+        </script>
+    </head>
+    <body bgcolor="lightblue">
+        <form name="regform">
+        <div align="center" >
+            <h style = " font-size:1cm; font-family: 'Algerian', Times, serif; color: rgb(90, 44, 255); ">REGISTRATION FORM</h><br/><br/>
+            USERNAME : <input type="text" placeholder="Enter your playername" name="pname"><br/><br/>
+            GAME NAME : <input type="text" placeholder="Enter your gaming name" name="gname"><br/><br/>
+            PASSWORD : <input type="password" placeholder="minimum 8 characters" name="pswd" ><br/><br/>
+            DOB  : <input type="date" placeholder="Enter your DOB" name="dob"><br/><br/>
+            EMAIL : <input type="email" placeholder="enter your email" name="email"><br/><br/>
+            PHONE : <input type="tel" placeholder="enter your phone number" name="phno"><br/><br/>
+            PLAYER ID : <input type="number" placeholder="12 digit player id" name="pid"><br/><br/>
+            DEVICE : <input type="text" placeholder="Enter your devicename" name="dname"><br/><br/>
+            CONTROL ID: <input type="number" placeholder="15 digit control id" name="ctrl"><br/><br/>
+            GAME : <input type="text" placeholder="Enter the game" name="game"><br/><br/>
+        </div>
+        <div align="center">
+            <input type="submit" value="confirm" onClick="return validate()">
+            <input type="reset" value="clear">
+        </div>
+    </form>
+    </body>
+</html>
